@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block B Company - Loja de Roupas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>BLOCK B <span>COMPANY</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Início</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <button id="login-btn" class="btn-login"><i class="fas fa-user"></i> Login</button>
+                <button id="cart-btn" class="btn-cart"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <div class="banner-content">
+            <h2>COMPRE ROUPAS</h2>
+            <p>As melhores roupas com preços melhores</p>
+            <a href="#produtos" class="btn-primary">Comprar Agora</a>
+        </div>
+    </section>
+
+    <!-- Produtos -->
+    <section id="produtos" class="products">
+        <div class="container">
+            <h2 class="section-title">NOSSOS PRODUTOS</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="camisetas">Roupas/Conjuntos</button>
+                <button class="filter-btn" data-filter="calcas">Calças</button>
+                <button class="filter-btn" data-filter="acessorios">Tênis</button>
+            </div>
+            <div class="products-grid" id="products-grid">
+                <!-- Produtos serão carregados via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <h2 class="section-title">SOBRE A BLOCK B COMPANY</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>A Block B Company nasceu combinando estilos diferentes, do jeito que as pessoas gostam.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Loja Block B">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2 class="section-title">ENTRE EM CONTATO</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> R. Antônio Raposo, 87 - Lapa, São Paulo - SP</p>
+                    <p><i class="fas fa-phone"></i> 011 91035-3747</p>
+                    <p><i class="fas fa-envelope"></i> contato@blockbcompany.com</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Envie uma Mensagem</h3>
+                    <form>
+                        <input type="text" placeholder="Seu nome" required>
+                        <input type="email" placeholder="Seu e-mail" required>
+                        <textarea placeholder="Sua mensagem" rows="5" required></textarea>
+                        <button type="submit" class="btn-primary">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BLOCK B COMPANY</h3>
+                    <p>Estilo que transforma.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#produtos">Produtos</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Formas de Pagamento</h3>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                        <i class="fab fa-cc-amazon-pay"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Block B Company. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Login -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="email" placeholder="E-mail" required>
+                <input type="password" placeholder="Senha" required>
+                <button type="submit" class="btn-primary">Entrar</button>
+            </form>
+            <p>Não tem uma conta? <a href="#" id="register-link">Cadastre-se</a></p>
+        </div>
+    </div>
+
+    <!-- Modal de Registro -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Cadastro</h2>
+            <form id="register-form">
+                <input type="text" placeholder="Nome completo" required>
+                <input type="email" placeholder="E-mail" required>
+                <input type="password" placeholder="Senha" required>
+                <input type="password" placeholder="Confirmar senha" required>
+                <button type="submit" class="btn-primary">Cadastrar</button>
+            </form>
+            <p>Já tem uma conta? <a href="#" id="login-link">Faça login</a></p>
+        </div>
+    </div>
+
+    <!-- Modal do Carrinho -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content cart-modal">
+            <span class="close">&times;</span>
+            <h2>Seu Carrinho</h2>
+            <div id="cart-items">
+                <!-- Itens do carrinho serão carregados aqui -->
+            </div>
+            <div class="cart-total">
+                <p>Total: R$ <span id="cart-total-price">0.00</span></p>
+            </div>
+            <div class="cart-actions">
+                <button id="continue-shopping" class="btn-secondary">Continuar Comprando</button>
+                <button id="checkout-btn" class="btn-primary">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Checkout -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content checkout-modal">
+            <span class="close">&times;</span>
+            <h2>Finalizar Compra</h2>
+            <div class="checkout-steps">
+                <div class="step active" data-step="1">Dados</div>
+                <div class="step" data-step="2">Pagamento</div>
+                <div class="step" data-step="3">Final</div>
+            </div>
+            
+            <div id="checkout-step-1" class="checkout-step active">
+                <h3>Informações de Entrega</h3>
+                <form>
+                    <input type="text" placeholder="Nome completo" required>
+                    <input type="email" placeholder="E-mail" required>
+                    <input type="text" placeholder="Endereço" required>
+                    <input type="text" placeholder="Cidade" required>
+                    <input type="text" placeholder="CEP" required>
+                    <button type="button" class="btn-primary next-step" data-next="2">Continuar</button>
+                </form>
+            </div>
+            
+            <div id="checkout-step-2" class="checkout-step">
+                <h3>Forma de Pagamento</h3>
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <input type="radio" id="credit-card" name="payment" checked>
+                        <label for="credit-card">Cartão de Crédito</label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" id="debit-card" name="payment">
+                        <label for="debit-card">Cartão de Débito</label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" id="pix" name="payment">
+                        <label for="pix">PIX</label>
+                    </div>
+                </div>
+                <div class="payment-form">
+                    <input type="text" placeholder="Número do cartão" required>
+                    <input type="text" placeholder="Nome no cartão" required>
+                    <div class="form-row">
+                        <input type="text" placeholder="Validade (MM/AA)" required>
+                        <input type="text" placeholder="CVV" required>
+                    </div>
+                    <button type="button" class="btn-primary next-step" data-next="3">Finalizar Pedido</button>
+                </div>
+            </div>
+            
+            <div id="checkout-step-3" class="checkout-step">
+                <h3>Pedido Confirmado!</h3>
+                <div class="order-confirmation">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Seu pedido foi realizado com sucesso!</p>
+                    <p>Número do pedido: <strong>#BB2023001</strong></p>
+                    <p>Você receberá um e-mail com os detalhes da compra.</p>
+                    <button id="back-to-shop" class="btn-primary">Voltar às Compras</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
